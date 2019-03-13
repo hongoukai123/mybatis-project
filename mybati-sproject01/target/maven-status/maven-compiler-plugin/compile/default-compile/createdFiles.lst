@@ -1,0 +1,3 @@
+com\kai\chap\pojo\User.class
+com\kai\chap\utils\MybatisUtil.class
+com\kai\chap\mapper\UserMapper.class

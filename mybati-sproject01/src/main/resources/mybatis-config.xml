@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 加载数据库连接配置文件 -->
+    <properties resource="db.properties"></properties>
+
+    <!-- 为java类型设置一个短名，这个只和XML配置有关，存在的意义仅在于用来减少类完全限定名的冗余 -->
+    <typeAliases>
+        <package name="com.kai.chap.pojo"/>
+        <!--<typeAlias type="com.kai.chap.pojo.User" alias="User"/>-->
+    </typeAliases>
+
+    <!-- 数据连接配置 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+        <!--<environment id="test">-->
+            <!--<transactionManager type=""></transactionManager>-->
+            <!--<dataSource type=""></dataSource>-->
+        <!--</environment>-->
+        <!--<environment id="">-->
+            <!--<transactionManager type=""></transactionManager>-->
+            <!--<dataSource type=""></dataSource>-->
+        <!--</environment>-->
+    </environments>
+
+    <!-- mapper映射文件的加载配置 -->
+    <mappers>
+        <package name="mapping/*.xml"/>
+        <!--<mapper class="com/kai/chap/mapping/UserMapper.xml"/>-->
+    </mappers>
+
+</configuration>
